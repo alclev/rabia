@@ -1,0 +1,15 @@
+software-properties-common
+g++
+build-essential
+vim
+make
+gdb
+valgrind
+autoconf
+automake
+libtool
+curl
+unzip
+protobuf-compiler
+libprotobuf-dev
+libspdlog-dev

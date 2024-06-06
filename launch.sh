@@ -1,0 +1,1 @@
+docker run --privileged --rm -v  $(PWD):/root --env-file .env --name rabia -it rabia

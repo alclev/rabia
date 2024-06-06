@@ -1,0 +1,9 @@
+TODO:   
+    - Implement signal process for SIGINT and SIGTERM
+
+Incomplete: 
+    Message.cc
+    Ledger.cc
+
+
+
