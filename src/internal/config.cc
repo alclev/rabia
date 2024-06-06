@@ -2,14 +2,19 @@
 #include <sstream>
 
 void loadConfigs(Config &config){
+#ifdef DEBUG
+    _log("loadConfigs called");
+#endif
     loadEnvVars1(config);
     loadEnvVars2(config);
     CalcConstants(config);
     /* Placeholder for Redis */
 }
 
-
 void loadEnvVars1(Config &c) {
+#ifdef DEBUG
+    _log("loadEnvVars1 called");
+#endif
     if (const char* role = std::getenv("RC_Role")) {
         c.Role = role;
     }
@@ -38,6 +43,9 @@ void loadEnvVars1(Config &c) {
 }
 
 void loadEnvVars2(Config &c) {
+#ifdef DEBUG
+    _log("loadEnvVars2 called");
+#endif
     if (const char* controllerAddr = std::getenv("RC_Ctrl")) {
         c.ControllerAddr = controllerAddr;
     }
@@ -83,6 +91,9 @@ void loadEnvVars2(Config &c) {
 }
 
 void CalcConstants(Config &c){
+#ifdef DEBUG
+    _log("CalcConstants called");
+#endif
     c.NMinusF = c.NServers - c.NFaulty;
 	c.Majority = c.NServers/2 + 1;
 	c.MajorityPlusF = c.NServers/2 + c.NFaulty + 1;
@@ -108,6 +119,9 @@ void CalcConstants(Config &c){
 }
 
 void Config::printConfig(){
+#ifdef DEBUG
+    _log("Config::printConfig called");
+#endif
     std::cout << "Role: " << Role << std::endl;
     std::cout << "Id: " << Id << std::endl;
     std::cout << "ControllerAddr: " << ControllerAddr << std::endl;

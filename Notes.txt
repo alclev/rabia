@@ -1,9 +1,9 @@
 TODO:   
     - Implement signal process for SIGINT and SIGTERM
+    - Queue in ledger
 
 Incomplete: 
-    Message.cc
-    Ledger.cc
-
-
+    Message
+    Ledger
+    System.cc -- may not need
 

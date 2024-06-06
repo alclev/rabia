@@ -34,20 +34,20 @@ int main(){
             case 0:
                 /* Controller */
 #ifdef DEBUG
-                _log("Controller");
+                _log("--> Controller");
 #endif
 
                 break;
             case 1:
                 /* Server */
 #ifdef DEBUG
-                _log("Server");
+                _log("--> Server");
 #endif
                 break;
             case 2:
                 /* Client */
 #ifdef DEBUG
-                _log("Client");
+                _log("--> Client");
 #endif
                 break;
             default:
