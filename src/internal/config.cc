@@ -1,5 +1,4 @@
 #include "config.h"
-#include <sstream>
 
 void loadConfigs(Config &config){
 #ifdef DEBUG

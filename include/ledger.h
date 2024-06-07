@@ -1,4 +1,4 @@
-#include "message.pb.h"
+/* #include "message.pb.h"
 #include <mutex>
 #include <vector>
 #include <cstdint>
@@ -43,4 +43,4 @@ class Ledger{
         int recvBCMsgsMajT(uint32_t phase, uint32_t round);
         int getRecvBCMsgsT(uint32_t phase, uint32_t round);
         bool hasEnoughMsg(uint32_t phase, uint32_t round);
-};
+}; */

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <cstdarg>
 
 void _log(const std::string& msg);
 

@@ -1,11 +1,22 @@
 #pragma once
 
-#include <string> 
-#include <memory> // std::shared_ptr
-#include <spdlog/spdlog.h> // spdlog::level::level_enum and spdlog::logger
+#include <spdlog/spdlog.h>
+#include <spdlog/sinks/basic_file_sink.h>
+#include <spdlog/sinks/stdout_color_sinks.h>
+#include <filesystem>
+#include <string>
+#include <stdexcept>
+#include <chrono>
+#include <cstdint>
+#include <memory>
 
-std::string GetLogFilePathAndName(Config &c, const std::string &component, uint32_t svrId, uint32_t subId);
+#include "config.h"  
+#include "debug.h"
 
-spdlog::level::level_enum GetLogLevel(Config &c);
+namespace Logger{
+    std::string GetLogFilePathAndName(Config &c, const std::string &component, uint32_t svrId, uint32_t subId);
 
-std::shared_ptr<spdlog::logger> InitLogger(Config &c, const std::string& component, uint32_t svrId, uint32_t subId, const std::string& loggerType);
+    spdlog::level::level_enum GetLogLevel(Config &c);
+
+    std::shared_ptr<spdlog::logger> InitLogger(Config &c, const std::string& component, uint32_t svrId, uint32_t subId, const std::string& loggerType);
+}

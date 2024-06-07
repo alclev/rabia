@@ -1,13 +1,4 @@
-#include <spdlog/spdlog.h>
-#include <spdlog/sinks/basic_file_sink.h>
-#include <spdlog/sinks/stdout_color_sinks.h>
-#include <filesystem>
-#include <string>
-#include <stdexcept>
-#include <chrono>
-#include <cstdint>
-#include <memory>
-#include "config.h"  
+#include "logger.h"
 
 namespace Logger {
 

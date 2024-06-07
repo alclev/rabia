@@ -3,7 +3,6 @@ TODO:
     - Queue in ledger
 
 Incomplete: 
-    Message
     Ledger
     System.cc -- may not need
 

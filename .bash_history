@@ -429,3 +429,27 @@ clear; make
 clear; make
 clear; make
 exit
+make
+make
+clear; make
+clear; make
+clear; make
+clear; make
+clear; make
+clear; make
+clear; make
+clear; make
+clear; make
+clear; make
+clear; make
+clear; make
+clear; make
+clear; make
+clear; make
+clear; make
+clear; make
+./bin/rabia 
+exit
+make clena
+make clean
+exit

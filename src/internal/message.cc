@@ -1,7 +1,4 @@
 #include "message.h"
-#include "debug.h"
-#include "tcp.h"
-#include "message.pb.h"
 
 // Constructor
 Message::Message(size_t len) {
@@ -66,8 +63,8 @@ void Message::writeFlush(int sock) {
 #ifdef DEBUG
     _log("Message::writeFlush called");
 #endif
-    /* write buffer to socket */
-    client_tcp::send(sock, buffer);
+    /* write buffer to client socket */
+    client_tcp::client_send(sock, buffer);
     buffer.clear();
 }
 

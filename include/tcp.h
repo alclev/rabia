@@ -18,29 +18,29 @@ typedef uint8_t byte;
 namespace server_tcp {
 
     // Initialize server and return (server, client) socket
-    std::pair<int, int> connect();
+    std::pair<int, int> server_connect();
 
     // Send data to the client
-    void send(int client_sd, const std::vector<byte> &data);
+    void server_send(int client_sd, const std::vector<byte> &data);
 
     // Receive data from the client
-    void recv(int client_sd, std::vector<byte> &data);
+    void server_recv(int client_sd, std::vector<byte> &data);
 
     // Close the server socket
-    void close_server(int server_sd);
+    void server_close(int server_sd);
 }
 
 namespace client_tcp {
 
     // Initialize client and connect to the server
-    int connect();
+    int client_connect();
 
     // Send data to the server
-    void send(int client_sd, const std::vector<byte> &data);
+    void client_send(int client_sd, const std::vector<byte> &data);
 
     // Receive data from the server
-    void recv(int client_sd, std::vector<byte> &data);
+    void client_recv(int client_sd, std::vector<byte> &data);
 
     // Close the client socket
-    void close_client(int client_sd);
+    void client_close(int client_sd);
 }

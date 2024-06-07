@@ -4,9 +4,12 @@
 #include <string>
 #include <vector>
 #include <chrono>
-
 #include <cstdlib>
 #include <iostream>
+#include <sstream>
+
+#include "debug.h"
+
 
 struct Config {
     std::string Role;           // ctrl | svr | cli
