@@ -1,4 +1,7 @@
-#include "Message.h"
+#include "message.h"
+#include "debug.h"
+#include "tcp.h"
+#include "message.pb.h"
 
 // Constructor
 Message::Message(size_t len) {
@@ -50,50 +53,75 @@ void Message::buffWrite(const std::vector<byte> &data) {
     buffer.insert(buffer.end(), data.begin(), data.end());
 }
 
-// Read data from the buffer (implementation pending)
-void Message::buffRead() {
+// Read data from the buffer
+std::vector<byte> Message::buffRead() {
 #ifdef DEBUG
     _log("Message::buffRead called");
 #endif
-    // TODO: Implement buffer reading logic
+    return buffer;
 }
 
-// Flush the buffer (implementation pending)
-void Message::writeFlush() {
+// Write buffer to socket and clear it
+void Message::writeFlush(int sock) {
 #ifdef DEBUG
     _log("Message::writeFlush called");
 #endif
-    // TODO: Implement write flush logic
+    /* write buffer to socket */
+    client_tcp::send(sock, buffer);
+    buffer.clear();
 }
 
-// Marshal write flush for Command (implementation pending)
+// Serialize and write Command object to buffer
 void Message::marshalWriteFlush(message::Command &c) {
 #ifdef DEBUG
     _log("Message::marshalWriteFlush called");
 #endif
-    // TODO: Implement marshal write flush for Command
+    /* serialize command object using protobuf */
+    std::string serialized;
+    if(c.SerializeToString(&serialized)) {
+        std::vector<byte> data(serialized.begin(), serialized.end());
+        buffWrite(data);
+    } else {
+        _err("Failed to serialize Command object");
+    }
 }
 
-// Read and unmarshal data into Command (implementation pending)
+// Read and unmarshal data into Command object
 void Message::readUnmarshal(message::Command &c) {
 #ifdef DEBUG
-    _log("Message::readUnmarshal called");
 #endif
-    // TODO: Implement read unmarshal for Command
+    /* read data from buffer */
+    std::vector<byte> data = buffRead();
+    std::string serialized(data.begin(), data.end());
+    if(!c.ParseFromString(serialized)) {
+        _err("Failed to parse Command object");
+    }
 }
 
-// Marshal write flush for Msg (implementation pending)
+// Serialize and write Msg object to buffer
 void Message::marshalWriteFlush(message::Msg &m) {
 #ifdef DEBUG
     _log("Message::marshalWriteFlush called");
 #endif
-    // TODO: Implement marshal write flush for Msg
+    /* serialize message object using protobuf */
+    std::string serialized;
+    if(m.SerializeToString(&serialized)) {
+        std::vector<byte> data(serialized.begin(), serialized.end());
+        buffWrite(data);
+    } else {
+        _err("Failed to serialize Msg object");
+    }
 }
 
-// Read and unmarshal data into Msg (implementation pending)
+// Read and unmarshal data into Msg object (implementation pending)
 void Message::readUnmarshal(message::Msg &m) {
 #ifdef DEBUG
     _log("Message::readUnmarshal called");
 #endif
-    // TODO: Implement read unmarshal for Msg
+    /* read data from buffer */
+    std::vector<byte> data = buffRead();
+    std::string serialized(data.begin(), data.end());
+    if(!m.ParseFromString(serialized)) {
+        _err("Failed to parse Msg object");
+    }
 }
