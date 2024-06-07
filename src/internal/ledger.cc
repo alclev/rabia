@@ -1,4 +1,5 @@
 #include "ledger.h"
+#include "debug.h"
 
 Ledger::Ledger(){
 #ifdef DEBUG
