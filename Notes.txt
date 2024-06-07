@@ -1,10 +1,11 @@
 TODO:   
     - Implement signal process for SIGINT and SIGTERM
     - Queue in ledger
+    - Adjust network to handle broadcast
 
 Incomplete: 
     Ledger
     System.cc -- may not need
 
 In-Progress:
-    - 
+    - Network
