@@ -31,11 +31,11 @@ To run the RABIA implementation, you need the following installed on your system
 
 2. Build the project:
 
-  <placeholder>
+  ...
 
 ### Running the Tests
 
-<placeholder>
+...
 
 ## Usage
 
@@ -63,4 +63,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgements
 
-This project is based on the original work of Roberto Palmieri and Haochen Pan. The original repository is[here](https://github.com/haochenpan/rabia).
+This project is based on the original work of Roberto Palmieri and Haochen Pan. The original repository is [here](https://github.com/haochenpan/rabia).
