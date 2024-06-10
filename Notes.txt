@@ -9,3 +9,7 @@ Incomplete:
 
 In-Progress:
     - Network
+    - Getting started Remus-internal
+    - rdma/test/multinode.cc for a reference to how to initialize
+    - git checkout rdma_capability_thread
+    
