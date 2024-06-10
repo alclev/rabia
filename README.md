@@ -1,6 +1,6 @@
-# RABIA
+# RABIA (C++)
 
-RABIA is a consensus algorithm designed to achieve consensus in distributed systems efficiently and robustly. This implementation provides a practical reference for understanding and utilizing the RABIA algorithm.
+RABIA is a consensus algorithm designed to achieve consensus in distributed systems efficiently and robustly. This implementation provides an implementation of the algorithm in C++, as an ongoing initiative to enable RDMA (Remote Direct Memory Access) message passing. 
 
 ## Overview
 
@@ -18,7 +18,7 @@ RABIA is a consensus protocol that ensures fault tolerance and consistency in di
 
 To run the RABIA implementation, you need the following installed on your system:
 
-- c++
+- C/C++
 
 ### Installation
 
